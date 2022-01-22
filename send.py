@@ -11,5 +11,6 @@ if target in targetIPs:
     targetIP = targetIPs[target]
     mysocket.sendto(message.encode(), (targetIP, targetPort))
 else:
+    # jika input tidak ada di dict, maka menjadi broadcast
     for targetIP in targetIPs.values():
         mysocket.sendto(message.encode(), (targetIP, targetPort))
